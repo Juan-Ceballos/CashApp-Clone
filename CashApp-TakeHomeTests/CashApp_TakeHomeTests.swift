@@ -10,6 +10,22 @@ import XCTest
 
 final class CashApp_TakeHomeTests: XCTestCase {
 
-    
-    
+    func testCashAppAPIFetchParseStocks() async {
+        let exp = XCTestExpectation(description: "Stock data fetched and parsed")
+        let cashAppAPI = CashAppAPI()
+        let expectedMinStockCount = 5
+        
+        Task {
+            do {
+                let stocks = try await cashAppAPI.fetchParseStocks()
+                let stocksCount = stocks.stocks.count
+                XCTAssertGreaterThanOrEqual(stocksCount, expectedMinStockCount, "expected min count of stocks, \(expectedMinStockCount), is not less than or equal to the current count of stocks, \(stocksCount).")
+                exp.fulfill()
+            } catch {
+                XCTFail("failed to fetch and/or parse stock data due to error: \(error)")
+            }
+        }
+        
+        await fulfillment(of: [exp], timeout: 10.0)
+    }
 }

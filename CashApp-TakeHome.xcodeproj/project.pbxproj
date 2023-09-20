@@ -15,6 +15,8 @@
 		3ECDB6F22ABBA20600A68AD8 /* CashApp_TakeHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB6F12ABBA20600A68AD8 /* CashApp_TakeHomeTests.swift */; };
 		3ECDB6FC2ABBA20700A68AD8 /* CashApp_TakeHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB6FB2ABBA20700A68AD8 /* CashApp_TakeHomeUITests.swift */; };
 		3ECDB6FE2ABBA20700A68AD8 /* CashApp_TakeHomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB6FD2ABBA20700A68AD8 /* CashApp_TakeHomeUITestsLaunchTests.swift */; };
+		3ECDB70B2ABBA7CF00A68AD8 /* CashAppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB70A2ABBA7CF00A68AD8 /* CashAppAPI.swift */; };
+		3ECDB70D2ABBA9C300A68AD8 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		3ECDB6F72ABBA20600A68AD8 /* CashApp-TakeHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CashApp-TakeHomeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ECDB6FB2ABBA20700A68AD8 /* CashApp_TakeHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashApp_TakeHomeUITests.swift; sourceTree = "<group>"; };
 		3ECDB6FD2ABBA20700A68AD8 /* CashApp_TakeHomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashApp_TakeHomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3ECDB70A2ABBA7CF00A68AD8 /* CashAppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashAppAPI.swift; sourceTree = "<group>"; };
+		3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				3ECDB6E32ABBA20600A68AD8 /* Assets.xcassets */,
 				3ECDB6E52ABBA20600A68AD8 /* LaunchScreen.storyboard */,
 				3ECDB6E82ABBA20600A68AD8 /* Info.plist */,
+				3ECDB70A2ABBA7CF00A68AD8 /* CashAppAPI.swift */,
+				3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */,
 			);
 			path = "CashApp-TakeHome";
 			sourceTree = "<group>";
@@ -255,6 +261,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ECDB6DF2ABBA20300A68AD8 /* ViewController.swift in Sources */,
+				3ECDB70D2ABBA9C300A68AD8 /* StockModel.swift in Sources */,
+				3ECDB70B2ABBA7CF00A68AD8 /* CashAppAPI.swift in Sources */,
 				3ECDB6DB2ABBA20300A68AD8 /* AppDelegate.swift in Sources */,
 				3ECDB6DD2ABBA20300A68AD8 /* SceneDelegate.swift in Sources */,
 			);
