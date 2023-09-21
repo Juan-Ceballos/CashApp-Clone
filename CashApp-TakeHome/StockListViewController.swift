@@ -49,7 +49,7 @@ extension StockListViewController: UICollectionViewDataSource {
         }
         cell.backgroundColor = .black
         let stock = stocks[indexPath.row]
-        cell.configureCell(stickerName: stock.ticker, stockName: stock.name, stockCurrency: stock.currency, stockPrice: stock.current_price_cents, stockQuantity: stock.quantity, stockTimeStamp: stock.current_price_timestamp)
+        cell.configureCell(stickerName: stock.ticker, stockName: stock.name, stockCurrency: stock.currency, stockPrice: stock.currentPriceCents, stockQuantity: stock.quantity, stockTimeStamp: stock.currentPriceTimestamp)
         return cell
     }
     
