@@ -9,6 +9,14 @@ import UIKit
 
 class StockCell: UICollectionViewCell {
     
+    static let symbolFontSize: CGFloat = 17
+    static let detailsFontSize: CGFloat = 13
+    static let itemSpacing: CGFloat = 11
+    static let itemSmallPacing: CGFloat = 8
+    static let itemLargePacing: CGFloat = 22
+    static let cellContentMultiplier = 0.3
+    static let noSpacing: CGFloat = 0
+    
     override func layoutSubviews() {
         tickerView.layer.cornerRadius = tickerView.bounds.width / 2.0
         tickerView.clipsToBounds = true
@@ -17,13 +25,14 @@ class StockCell: UICollectionViewCell {
     public lazy var tickerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGreen
-        view.bounds = CGRect(x: 0, y: 0, width: contentView.bounds.width * 0.3, height: contentView.bounds.width * 0.3)
+        let cellContentMultiplier = StockCell.cellContentMultiplier
+        view.bounds = CGRect(x: StockCell.noSpacing, y: StockCell.noSpacing, width: contentView.bounds.width * cellContentMultiplier, height: contentView.bounds.width * cellContentMultiplier)
         return view
     }()
     
     var tickerLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 17)
+        label.font = .boldSystemFont(ofSize: symbolFontSize)
         label.textColor = .systemBackground
         return label
     }()
@@ -31,51 +40,53 @@ class StockCell: UICollectionViewCell {
     var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemBackground
+        label.font = .systemFont(ofSize: detailsFontSize)
         return label
     }()
     
     var currencyLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemBackground
+        label.font = .systemFont(ofSize: detailsFontSize)
         return label
     }()
     
     var priceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemBackground
+        label.font = .systemFont(ofSize: detailsFontSize)
         return label
     }()
     
     var quantityLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemBackground
+        label.font = .systemFont(ofSize: detailsFontSize)
         return label
     }()
     
     var stockTimeLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemBackground
+        label.font = .systemFont(ofSize: detailsFontSize)
         return label
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: UIScreen.main.bounds)
-        commoninit()
-    }
-    
     func configureCell(stickerName: String, stockName: String, stockCurrency: String,
                        stockPrice: Int, stockQuantity: Int?, stockTimeStamp: Int) {
+        let defaultQuantity = 0
+        let dollarMultiplier = 100.0
         tickerLabel.text = stickerName
         nameLabel.text = stockName
         currencyLabel.text = "\(stockCurrency):"
         
         let priceInCents = stockPrice
-        let priceDollars = Double(priceInCents) / 100.0
+        let priceDollars = Double(priceInCents) / dollarMultiplier
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         priceLabel.text = formatter.string(from: NSNumber(value: priceDollars))
         
-        quantityLabel.text = "Quantity: \(stockQuantity ?? 0)"
+        quantityLabel.text = "Quantity: \(stockQuantity ?? defaultQuantity)"
         
         let date = Date(timeIntervalSince1970: Double(stockTimeStamp))
         let dateFormatter = DateFormatter()
@@ -84,6 +95,11 @@ class StockCell: UICollectionViewCell {
         let utcDateString = dateFormatter.string(from: date)
         stockTimeLabel.text = "As of: \(utcDateString)"
         
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        commoninit()
     }
     
     required init?(coder: NSCoder) {
@@ -105,9 +121,9 @@ class StockCell: UICollectionViewCell {
         addSubview(tickerView)
         tickerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tickerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11),
+            tickerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: StockCell.itemSpacing),
             tickerView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            tickerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3),
+            tickerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: StockCell.cellContentMultiplier),
             tickerView.heightAnchor.constraint(equalTo: tickerView.widthAnchor)
         ])
     }
@@ -125,8 +141,8 @@ class StockCell: UICollectionViewCell {
         addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 22),
-            nameLabel.leadingAnchor.constraint(equalTo: tickerView.trailingAnchor, constant: 11)
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: StockCell.itemLargePacing),
+            nameLabel.leadingAnchor.constraint(equalTo: tickerView.trailingAnchor, constant: StockCell.itemSpacing)
         ])
     }
     
@@ -134,7 +150,7 @@ class StockCell: UICollectionViewCell {
         addSubview(currencyLabel)
         currencyLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            currencyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            currencyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: StockCell.itemSmallPacing),
             currencyLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
         
         ])
@@ -145,7 +161,7 @@ class StockCell: UICollectionViewCell {
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             priceLabel.topAnchor.constraint(equalTo: currencyLabel.topAnchor),
-            priceLabel.leadingAnchor.constraint(equalTo: currencyLabel.trailingAnchor, constant: 8)
+            priceLabel.leadingAnchor.constraint(equalTo: currencyLabel.trailingAnchor, constant: StockCell.itemSmallPacing)
         ])
     }
     
@@ -153,7 +169,7 @@ class StockCell: UICollectionViewCell {
         addSubview(quantityLabel)
         quantityLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            quantityLabel.topAnchor.constraint(equalTo: currencyLabel.bottomAnchor, constant: 8),
+            quantityLabel.topAnchor.constraint(equalTo: currencyLabel.bottomAnchor, constant: StockCell.itemSmallPacing),
             quantityLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
         ])
     }
@@ -162,7 +178,7 @@ class StockCell: UICollectionViewCell {
         addSubview(stockTimeLabel)
         stockTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stockTimeLabel.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 8),
+            stockTimeLabel.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: StockCell.itemSpacing),
             stockTimeLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
         ])
     }
