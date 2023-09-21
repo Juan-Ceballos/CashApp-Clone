@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3ECDB6DB2ABBA20300A68AD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB6DA2ABBA20300A68AD8 /* AppDelegate.swift */; };
 		3ECDB6DD2ABBA20300A68AD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB6DC2ABBA20300A68AD8 /* SceneDelegate.swift */; };
-		3ECDB6DF2ABBA20300A68AD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB6DE2ABBA20300A68AD8 /* ViewController.swift */; };
+		3ECDB6DF2ABBA20300A68AD8 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB6DE2ABBA20300A68AD8 /* StockListViewController.swift */; };
 		3ECDB6E42ABBA20600A68AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ECDB6E32ABBA20600A68AD8 /* Assets.xcassets */; };
 		3ECDB6E72ABBA20600A68AD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECDB6E52ABBA20600A68AD8 /* LaunchScreen.storyboard */; };
 		3ECDB6F22ABBA20600A68AD8 /* CashApp_TakeHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB6F12ABBA20600A68AD8 /* CashApp_TakeHomeTests.swift */; };
@@ -17,6 +17,8 @@
 		3ECDB6FE2ABBA20700A68AD8 /* CashApp_TakeHomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB6FD2ABBA20700A68AD8 /* CashApp_TakeHomeUITestsLaunchTests.swift */; };
 		3ECDB70B2ABBA7CF00A68AD8 /* CashAppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB70A2ABBA7CF00A68AD8 /* CashAppAPI.swift */; };
 		3ECDB70D2ABBA9C300A68AD8 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */; };
+		3ECDB70F2ABBC79500A68AD8 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB70E2ABBC79500A68AD8 /* StockCell.swift */; };
+		3ECDB7112ABBC8B500A68AD8 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB7102ABBC8B500A68AD8 /* StockListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,7 @@
 		3ECDB6D72ABBA20300A68AD8 /* CashApp-TakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CashApp-TakeHome.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ECDB6DA2ABBA20300A68AD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ECDB6DC2ABBA20300A68AD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3ECDB6DE2ABBA20300A68AD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3ECDB6DE2ABBA20300A68AD8 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
 		3ECDB6E32ABBA20600A68AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3ECDB6E62ABBA20600A68AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3ECDB6E82ABBA20600A68AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		3ECDB6FD2ABBA20700A68AD8 /* CashApp_TakeHomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashApp_TakeHomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3ECDB70A2ABBA7CF00A68AD8 /* CashAppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashAppAPI.swift; sourceTree = "<group>"; };
 		3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
+		3ECDB70E2ABBC79500A68AD8 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		3ECDB7102ABBC8B500A68AD8 /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +105,16 @@
 		3ECDB6D92ABBA20300A68AD8 /* CashApp-TakeHome */ = {
 			isa = PBXGroup;
 			children = (
+				3ECDB70A2ABBA7CF00A68AD8 /* CashAppAPI.swift */,
+				3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */,
+				3ECDB6DE2ABBA20300A68AD8 /* StockListViewController.swift */,
+				3ECDB7102ABBC8B500A68AD8 /* StockListView.swift */,
+				3ECDB70E2ABBC79500A68AD8 /* StockCell.swift */,
 				3ECDB6DA2ABBA20300A68AD8 /* AppDelegate.swift */,
 				3ECDB6DC2ABBA20300A68AD8 /* SceneDelegate.swift */,
-				3ECDB6DE2ABBA20300A68AD8 /* ViewController.swift */,
 				3ECDB6E32ABBA20600A68AD8 /* Assets.xcassets */,
 				3ECDB6E52ABBA20600A68AD8 /* LaunchScreen.storyboard */,
 				3ECDB6E82ABBA20600A68AD8 /* Info.plist */,
-				3ECDB70A2ABBA7CF00A68AD8 /* CashAppAPI.swift */,
-				3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */,
 			);
 			path = "CashApp-TakeHome";
 			sourceTree = "<group>";
@@ -260,8 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ECDB6DF2ABBA20300A68AD8 /* ViewController.swift in Sources */,
+				3ECDB6DF2ABBA20300A68AD8 /* StockListViewController.swift in Sources */,
 				3ECDB70D2ABBA9C300A68AD8 /* StockModel.swift in Sources */,
+				3ECDB70F2ABBC79500A68AD8 /* StockCell.swift in Sources */,
+				3ECDB7112ABBC8B500A68AD8 /* StockListView.swift in Sources */,
 				3ECDB70B2ABBA7CF00A68AD8 /* CashAppAPI.swift in Sources */,
 				3ECDB6DB2ABBA20300A68AD8 /* AppDelegate.swift in Sources */,
 				3ECDB6DD2ABBA20300A68AD8 /* SceneDelegate.swift in Sources */,
