@@ -1,1 +1,22 @@
 # CashApp-TakeHome
+
+## Architech
+
+Considering the scope I took for the project, I decided on MVC architecture, which I am most comfortable coding in. I utilized programmatic UI to have wider control of each UI component and its placement.
+
+## Tradeoffs
+
+For simplicity I could have used one of the provided UITableView types, but I though organizing the layouts in a compositional collection view with a dataSource allowed for a balance of simplicity and customization specially if future additions are to be made. This does has it's limits specially if adding multiple sections and scrolling behaviours, in that case I would refactor to a compositional collection view but for scope of project did not want use such a powerful tool for a scroll down table with custom cells.
+
+## Run
+
+Should be able to clone and run project as is.
+
+## Third Party Libraries
+
+For this project I did not use any third party libraries, I would normally utilize SnapKit, but decided against it since it is a one page app and did not have to bloat project.
+
+##
+
+Normally in a project I am use to doing the network portion of app with a URLSession Singleton, and creating a Network Helper, then using escaping closures to handle fetch requests but wanted to leverage the convenience of Swift Concurrency that I have been attempting to use more in my newer projects.
+For testing I was not sure whether to model a personal portfolio or a company's portfolio, to handle empty reponses I asserted that a given portfolio will have at least five stocks
