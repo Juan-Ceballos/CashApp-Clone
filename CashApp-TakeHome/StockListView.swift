@@ -13,11 +13,11 @@ class StockListView: UIView {
     public lazy var cv: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.33, height: UIScreen.main.bounds.width * 0.33)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 0.33)
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.register(StockCell.self, forCellWithReuseIdentifier: StockListView.stockId)
         cv.backgroundColor = .black
-        cv.contentInset = UIEdgeInsets(top: 0, left: 11, bottom: 0, right: UIScreen.main.bounds.width * 0.65)
+        //cv.contentInset = UIEdgeInsets(top: 0, left: 11, bottom: 0, right: 0)
         return cv
     }()
     

@@ -47,9 +47,9 @@ extension StockListViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StockListView.stockId, for: indexPath) as? StockCell else {
             fatalError()
         }
-        cell.backgroundColor = .systemGreen
+        cell.backgroundColor = .black
         let stock = stocks[indexPath.row]
-        cell.configureCell(name: stock.ticker)
+        cell.configureCell(stickerName: stock.ticker, stockName: stock.name, stockCurrency: stock.currency, stockPrice: stock.current_price_cents, stockQuantity: stock.quantity, stockTimeStamp: stock.current_price_timestamp)
         return cell
     }
     
