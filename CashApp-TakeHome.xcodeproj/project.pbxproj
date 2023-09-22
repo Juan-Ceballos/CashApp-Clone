@@ -19,6 +19,7 @@
 		3ECDB70D2ABBA9C300A68AD8 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */; };
 		3ECDB70F2ABBC79500A68AD8 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB70E2ABBC79500A68AD8 /* StockCell.swift */; };
 		3ECDB7112ABBC8B500A68AD8 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB7102ABBC8B500A68AD8 /* StockListView.swift */; };
+		3ECDB7132ABD151700A68AD8 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDB7122ABD151700A68AD8 /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 		3ECDB70E2ABBC79500A68AD8 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		3ECDB7102ABBC8B500A68AD8 /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
+		3ECDB7122ABD151700A68AD8 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				3ECDB70A2ABBA7CF00A68AD8 /* CashAppAPI.swift */,
+				3ECDB7122ABD151700A68AD8 /* EmptyView.swift */,
 				3ECDB70C2ABBA9C300A68AD8 /* StockModel.swift */,
 				3ECDB6DE2ABBA20300A68AD8 /* StockListViewController.swift */,
 				3ECDB7102ABBC8B500A68AD8 /* StockListView.swift */,
@@ -270,6 +273,7 @@
 				3ECDB70D2ABBA9C300A68AD8 /* StockModel.swift in Sources */,
 				3ECDB70F2ABBC79500A68AD8 /* StockCell.swift in Sources */,
 				3ECDB7112ABBC8B500A68AD8 /* StockListView.swift in Sources */,
+				3ECDB7132ABD151700A68AD8 /* EmptyView.swift in Sources */,
 				3ECDB70B2ABBA7CF00A68AD8 /* CashAppAPI.swift in Sources */,
 				3ECDB6DB2ABBA20300A68AD8 /* AppDelegate.swift in Sources */,
 				3ECDB6DD2ABBA20300A68AD8 /* SceneDelegate.swift in Sources */,

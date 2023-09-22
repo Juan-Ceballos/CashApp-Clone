@@ -10,10 +10,11 @@ import UIKit
 class StockListViewController: UIViewController {
 
     let mainView = StockListView()
+    let emptyView = EmptyView()
     
-    override func loadView() {
-        view = mainView
-    }
+//    override func loadView() {
+//        view = mainView
+//    }
     
     let cashAppAPI = CashAppAPI()
     var stocks: [Stock] = []
@@ -27,7 +28,16 @@ class StockListViewController: UIViewController {
             do {
                 stocks = try await cashAppAPI.fetchParseStocks().stocks
                 DispatchQueue.main.async {
-                    self.mainView.cv.reloadData()
+                    if self.stocks.isEmpty {
+                        self.view.addSubview(self.emptyView)
+                        self.emptyView.isHidden = false
+                        self.mainView.removeFromSuperview()
+                    } else {
+                        self.mainView.cv.reloadData()
+                        self.view.addSubview(self.mainView)
+                        self.mainView.isHidden = false
+                        self.emptyView.removeFromSuperview()
+                    }
                 }
             } catch {
                 print("error: \(error)")
