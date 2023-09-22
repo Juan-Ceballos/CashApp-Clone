@@ -16,7 +16,7 @@ Should be able to clone and run project as is.
 
 For this project I did not use any third party libraries, I would normally utilize SnapKit, but decided against it since it is a one page app and did not have to bloat project.
 
-##
+## Other Notes
 
 Normally in a project I am use to doing the network portion of app with a URLSession Singleton, and creating a Network Helper, then using escaping closures to handle fetch requests but wanted to leverage the convenience of Swift Concurrency that I have been attempting to use more in my newer projects.
 For testing I was not sure whether to model a personal portfolio or a company's portfolio, to handle empty reponses I asserted that a given portfolio will have at least five stocks
