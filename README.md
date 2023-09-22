@@ -10,7 +10,7 @@ For simplicity I could have used one of the provided UITableView types, but I th
 
 ## Run
 
-Should be able to clone and run project as is.
+Should be able to clone/extract and run project as is.
 
 ## Third Party Libraries
 
