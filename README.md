@@ -2,7 +2,7 @@
 
 ## Architech
 
-Considering the scope I took for the project, I decided on MVC architecture, which I am most comfortable coding in. I utilized programmatic UI to have wider control of each UI component and its placement.
+Considering the scope I took for the project, I decided on MVC architecture. I utilized programmatic UI to have wider control of each UI component and its placement.
 
 ## Tradeoffs
 
